@@ -12,3 +12,10 @@ git push -u origin master
 
 
 git push
+
+git tag
+git tag -a v1.0
+
+怎么退出 git bash vim编辑器
+一直按住esc ，再连续按大写的z两次就退出来了。
+
