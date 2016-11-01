@@ -1,7 +1,7 @@
 ﻿# node.js login
 
 ## pic
-![](g1.jpg)
+![](\publish\images\r1.jpg)
 
 
 ## link
