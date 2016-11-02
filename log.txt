@@ -12,3 +12,10 @@ git push -u origin master
 
 
 git push
+
+
+
+
+查看模块版本
+npm ls
+

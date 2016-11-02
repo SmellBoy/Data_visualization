@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET index page. */
 router.get('/', function(req, res,next) {
-  res.render('index', { title: 'Login Center' });    
+  res.render('index', { title: 'Data visualization' });    
 });
 
 
@@ -114,5 +114,6 @@ router.route("/test6").get(function(req,res){    // 到达此路径则渲染logi
 router.route("/test7").get(function(req,res){    // 到达此路径则渲染login文件，并传出title值供 login.html使用
     res.render("test7");
 })
+
 
 module.exports = router;

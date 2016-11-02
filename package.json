@@ -13,7 +13,8 @@
     "express": "~4.13.4",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
-    "mysql":"latest"
+    "mysql":"latest",
+    "multer": "latest"
   }
 }
 
