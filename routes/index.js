@@ -115,5 +115,13 @@ router.route("/test7").get(function(req,res){    // 到达此路径则渲染logi
     res.render("test7");
 })
 
+router.route("/test8").get(function(req,res){    // 到达此路径则渲染login文件，并传出title值供 login.html使用
+    res.render("test8");
+})
+
+router.route("/test9").get(function(req,res){    // 到达此路径则渲染login文件，并传出title值供 login.html使用
+    res.render("test9");
+})
+
 
 module.exports = router;
