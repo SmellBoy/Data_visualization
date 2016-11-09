@@ -1,47 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
  <head> 
-  <meta charset="utf-8" /> 
-  <link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen" /> 
-  <style type="text/css">
-    .m15{ margin: 15px;}
-     .tc{ text-align: center;font-size: 18px;font-weight: 600;}
-    </style> 
+  <meta charset="UTF-8" /> 
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-ico"/>
+
+  <script type="text/javascript">
+  function getCookie(c_name)
+  {
+  if (document.cookie.length>0)
+    {
+    c_start=document.cookie.indexOf(c_name + "=")
+    if (c_start!=-1)
+      { 
+      c_start=c_start + c_name.length+1 
+      c_end=document.cookie.indexOf(";",c_start)
+      if (c_end==-1) c_end=document.cookie.length
+      return unescape(document.cookie.substring(c_start,c_end))
+      } 
+    }
+  return ""
+  }
+
+  function setCookie(c_name,value,expiredays)
+  {
+    var exdate=new Date()
+    exdate.setDate(exdate.getDate()+expiredays)
+    document.cookie=c_name+ "=" +escape(value)+
+    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+  }
+
+  function checkCookie()
+  {
+  username=getCookie('username')
+  if (username!=null && username!="")
+    {alert('Welcome again '+username+'!')}
+  else 
+    {
+    username=prompt('Please enter your name:',"")
+    if (username!=null && username!="")
+      {
+      setCookie('username',username,365)
+      }
+    }
+  }
+  </script>
+
  </head> 
  <body> 
-  <div class="container"> 
-   <form method="post" action="/users/login" class="col-sm-offset-4 col-sm-4 form-horizontal" role="form"> 
-    <div class="form-row"> 
-     <fieldset> 
-      <legend></legend> 
-      <div class="panel panel-default"> 
-       <div class="panel-heading"> 
-        <p class="tc">请先登录</p> 
-       </div> 
-       <div class="panel-body m15"> 
-        <div class="form-group"> 
-         <div class="input-group"> 
-          <span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span> </span> 
-          <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" required="" /> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <div class="input-group"> 
-          <span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span> </span> 
-          <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" required="" /> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <input type="submit" value="登录" class="btn btn-primary btn-block" id="login0" /> 
-        </div> 
-        <div class="form-group"> 
-         <button type="button" class="btn btn-info col-sm-2 col-sm-offset-10" id="register0"> <a href="/register" style ="text-align: center;font-size: 18px;font-weight: 600;">注册</a> </button> 
-        </div> 
-       </div> 
-      </div> 
-     </fieldset> 
-    </div> 
-   </form> 
-  </div>  
+  <title><%= title %></title>
+  <!-- 页面信息 -->
+  <div ng-app="" style="padding: 5px 40px 5px;">
+    <p align="right" style="color:black;font-family:'sans-serif'">您的名字 : 
+      <br/>
+      <input type="text" class="col-sm-offset-4"  ng-model="name" id="name"/>
+    <h1 align="right" style="color:black;font-family:'幼圆'"><i>Hello {{name}}</i></h1> 
+    </p>
+  </div> 
+  <!-- 标题 -->
+  <h1><%= title %></h1> 
+  <script src="http://elections.huffingtonpost.com/pollster/2016-general-election-trump-vs-clinton-vs-johnson/embed.js"></script> 
+
+  <img style="width:100%;height:20px;overflow:hidden;" src="/images/slide3.png" /> 
+  <p></p> 
+  <h1> 
+   <ul class="nav nav-pills"> 
+    <li class="active"><a href="/">首页</a></li> 
+    <li><a href="/login">登录</a></li> 
+    <li><a href="/register">注册</a></li> 
+    <li><a href="users/addUser?username=ab&password=12">快速</a></li> 
+    <li><a href="users/testUser">测试</a></li> 
+   </ul> </h1> 
+  <br /> 
+  <link rel="stylesheet" href="/stylesheets/style.css" /> 
+  <p> <a href="/test">可视化1</a> <a href="/test2">可视化2</a> <a href="/test3">可视化3</a> <a href="/test4">可视化4</a> <a href="/test5">可视化5</a> <a href="/test6">可视化6</a> <a href="/test7">可视化7</a> <a href="/test8">可视化8</a> <a href="/test9">可视化9</a> </p> 
+  <p> <a href="/test">可视化1</a> <a href="/test2">可视化2</a> <a href="/test3">可视化3</a> <a href="/test4">可视化4</a> <a href="/test5">可视化5</a> <a href="/test6">可视化6</a> <a href="/test7">可视化7</a> <a href="/test8">可视化8</a> <a href="/test9">可视化9</a> </p> 
+
+  <div> 
+  <script type="text/javascript">var dn = 0;</script>
+  <script type="text/javascript">
+  function downfun(id,name,ty)
+  {
+    dn = dn+1;
+    var dnn = '_'+dn+'_';
+    var x = document.getElementById(id);
+    x.setAttribute("download", 
+      name+dnn+Math.floor(Math.random()*1000)+ty);
+  }
+
+  </script>
+   <p align="right">点击下载原始图片：
+     <a id='t' href="/images/r1.jpg" onclick="downfun(id,'image_r1','.jpg')" class="btn btn-info btn-sm">
+     <span class="glyphicon glyphicon-cloud-download"></span> Cloud-download
+     </a>
+   </p>
+
+   <p align="right">点击下载 Lantern ：
+     <a id='et' href="/file/lantern-installer-beta.exe" onclick="downfun(id,'lantern','.exe')" class="btn btn-info btn-sm">
+     <span class="glyphicon glyphicon-cloud-download"></span> Cloud-download
+     </a>
+   </p>
+
+  </div> 
+
+  <script type="text/javascript">var n = 0;</script>
+  <button onclick="myFunction1()" type="button" class="btn btn-primary">新增数据</button>
+  <button onclick="myFunction2()" type="button" class="btn btn-default">删除数据</button>
+  <div id="div1" style="padding: 10px 10px 100px;">
+  </div>
+
+  <script type="text/javascript">
+  function myFunction1()
+  {
+    n = n+1;
+    // 静态文本
+    var para=document.createElement("a");
+    para.setAttribute("id", "a1");
+    var node=document.createTextNode("This is new."+n);
+    para.appendChild(node);
+    var element=document.getElementById("div1");
+    element.appendChild(para);
+
+    // 文本编辑框
+    var x = document.createElement("input");
+    x.setAttribute("type", "text");
+    x.setAttribute("id", "input1");
+    x.setAttribute("class", "form-control"); 
+    x.setAttribute("placeholder", "请输入"+n);
+    var element=document.getElementById("div1");
+    element.appendChild(x);
+
+    // 换行
+    var para=document.createElement("br");
+    para.setAttribute("id", "br1");
+    var element=document.getElementById("div1");
+    element.appendChild(para);
+
+  }
+
+  function myFunction2()  // 删除元素
+  {
+    var parent=document.getElementById("div1");
+    var childs = parent.childNodes; 
+    for(var i = childs.length - 1; i >= 0; i--) { 
+      parent.removeChild(childs[i]); 
+      parent.removeChild(childs[i-1]); 
+      parent.removeChild(childs[i-2]); 
+      break;
+    }
+  }
+  </script>
+
  </body>
 </html>
