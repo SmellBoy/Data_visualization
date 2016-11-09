@@ -1,95 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head> 
-  <meta charset="UTF-8" /> 
-  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
-  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" />
-
-  <script type="text/javascript">
-  function getCookie(c_name)
-  {
-  if (document.cookie.length>0)
-    {
-    c_start=document.cookie.indexOf(c_name + "=")
-    if (c_start!=-1)
-      { 
-      c_start=c_start + c_name.length+1 
-      c_end=document.cookie.indexOf(";",c_start)
-      if (c_end==-1) c_end=document.cookie.length
-      return unescape(document.cookie.substring(c_start,c_end))
-      } 
-    }
-  return ""
-  }
-
-  function setCookie(c_name,value,expiredays)
-  {
-    var exdate=new Date()
-    exdate.setDate(exdate.getDate()+expiredays)
-    document.cookie=c_name+ "=" +escape(value)+
-    ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
-  }
-
-  function checkCookie()
-  {
-  username=getCookie('username')
-  if (username!=null && username!="")
-    {alert('Welcome again '+username+'!')}
-  else 
-    {
-    username=prompt('Please enter your name:',"")
-    if (username!=null && username!="")
-      {
-      setCookie('username',username,365)
-      }
-    }
-  }
-  </script>
-
+  <meta charset="utf-8" /> 
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen" /> 
+  <style type="text/css">
+    .m15{ margin: 15px;}
+     .tc{ text-align: center;font-size: 18px;font-weight: 600;}
+    </style> 
  </head> 
  <body> 
-  <title><%= title %></title>
-  <h1><%= title %></h1> 
-  <script src="http://elections.huffingtonpost.com/pollster/2016-general-election-trump-vs-clinton-vs-johnson/embed.js"></script> 
-
-  <img style="width:100%;height:20px;overflow:hidden;" src="/images/slide3.png" /> 
-  <p></p> 
-  <h1> 
-   <ul class="nav nav-pills"> 
-    <li class="active"><a href="/">首页</a></li> 
-    <li><a href="/login">登录</a></li> 
-    <li><a href="/register">注册</a></li> 
-    <li><a href="users/addUser?username=ab&password=12">快速</a></li> 
-    <li><a href="users/testUser">测试</a></li> 
-   </ul> </h1> 
-  <br /> 
-  <link rel="stylesheet" href="/stylesheets/style.css" /> 
-  <p> <a href="/test">可视化1</a> <a href="/test2">可视化2</a> <a href="/test3">可视化3</a> <a href="/test4">可视化4</a> <a href="/test5">可视化5</a> <a href="/test6">可视化6</a> <a href="/test7">可视化7</a> <a href="/test8">可视化8</a> <a href="/test9">可视化9</a> </p> 
-  <p> <a href="/test">可视化1</a> <a href="/test2">可视化2</a> <a href="/test3">可视化3</a> <a href="/test4">可视化4</a> <a href="/test5">可视化5</a> <a href="/test6">可视化6</a> <a href="/test7">可视化7</a> <a href="/test8">可视化8</a> <a href="/test9">可视化9</a> </p> 
-  <div> 
-   <img style="width:100%;height:20px;overflow:hidden;" src="/images/slide3.png" /> 
-   <p>点击下载该资料： <a href="/images/r1.jpg" download="r1"> <img style="width:30px;height:30px;overflow:hidden;" border="0" src="/images/download.png" alt="r1" /> </a> </p> 
-  </div> 
-  <div ng-app="">
-
-  <p>名字 : </p>
-  <input type="text" ng-model="name" id="name"/>
-  <h1>Hello {{name}}</h1> 
-  </div> 
-
-  <button onclick="myFunction()">点击这里</button>
-  <script type="text/javascript">
-  function myFunction()
-  {
-    
-    var hiname_print = document.getElementById("name");
-    console.log({hiname_print});
-    console.log({name});
-    console.log("afafa");
-  }
-  </script>
-
+  <div class="container"> 
+   <form method="post" action="/users/login" class="col-sm-offset-4 col-sm-4 form-horizontal" role="form"> 
+    <div class="form-row"> 
+     <fieldset> 
+      <legend></legend> 
+      <div class="panel panel-default"> 
+       <div class="panel-heading"> 
+        <p class="tc">请先登录</p> 
+       </div> 
+       <div class="panel-body m15"> 
+        <div class="form-group"> 
+         <div class="input-group"> 
+          <span class="input-group-addon"> <span class="glyphicon glyphicon-user"></span> </span> 
+          <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" required="" /> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <div class="input-group"> 
+          <span class="input-group-addon"> <span class="glyphicon glyphicon-lock"></span> </span> 
+          <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" required="" /> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <input type="submit" value="登录" class="btn btn-primary btn-block" id="login0" /> 
+        </div> 
+        <div class="form-group"> 
+         <button type="button" class="btn btn-info col-sm-2 col-sm-offset-10" id="register0"> <a href="/register" style ="text-align: center;font-size: 18px;font-weight: 600;">注册</a> </button> 
+        </div> 
+       </div> 
+      </div> 
+     </fieldset> 
+    </div> 
+   </form> 
+  </div>  
  </body>
 </html>
