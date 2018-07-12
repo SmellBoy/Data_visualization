@@ -7,15 +7,23 @@
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "connect-multiparty": "latest",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "~2.4.1",
     "express": "~4.13.4",
+    "express-session": "^1.15.6",
+    "forever": "^0.15.3",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "mysql":"latest",
     "multer": "latest",
-    "connect-multiparty":"latest"
+    "mysql": "latest",
+    "serve-favicon": "~2.3.0"
+  },
+    "watch":[  //添加受监控的文件，以便自动更新
+        "models",
+        "routes"
+    ],
+  "watch_options": {  //监视配置
+    "followSymlinks": true
   }
 }
-
