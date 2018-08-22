@@ -19,11 +19,8 @@
     "mysql": "latest",
     "serve-favicon": "~2.3.0"
   },
-    "watch":[  //添加受监控的文件，以便自动更新
-        "models",
-        "routes"
-    ],
-  "watch_options": {  //监视配置
-    "followSymlinks": true
-  }
+    "watch":[
+	"node_modules",
+	"routes"
+    ]
 }
